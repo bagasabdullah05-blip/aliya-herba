@@ -32,11 +32,16 @@
   a{color:inherit}
   .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
 
-  .promo-bar{background:linear-gradient(90deg,var(--green-dark),var(--green));color:#fff;font-size:13.5px;text-align:center;padding:9px 16px;line-height:1.5}
+  .sticky-head{position:sticky;top:0;z-index:35;box-shadow:0 2px 12px rgba(20,80,52,.10)}
+  .promo-bar{background:linear-gradient(90deg,var(--green-dark),var(--green));color:#fff;font-size:13px;padding:7px 0;line-height:1.4}
+  .promo-bar-row{display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap}
   .promo-bar strong{color:#f3e7c8}
   .promo-bar a{color:#f3e7c8;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+  .top-timer{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:2px 11px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .top-timer .lbl{font-weight:600;opacity:.9;font-size:11.5px;letter-spacing:.02em}
+  .top-timer b{font-weight:900;font-size:12.5px;color:#fff}
 
-  .topbar{position:sticky;top:0;z-index:30;background:rgba(250,246,236,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topbar{position:relative;z-index:30;background:rgba(250,246,236,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;text-decoration:none}
   .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--green);display:grid;place-items:center;flex:none}
@@ -87,7 +92,7 @@
   .strip strong{color:#fff}
 
   section{padding:56px 0}
-  section[id]{scroll-margin-top:84px}
+  section[id]{scroll-margin-top:120px}
   .section-head{max-width:640px;margin-bottom:30px}
   .kicker{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 9px}
   h2.title{font-size:clamp(24px,3.2vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 10px}
@@ -133,8 +138,8 @@
   .pm-card h2{margin:10px 0 8px;font-size:22px;letter-spacing:-.02em;color:var(--green-dark)}
   .pm-card p{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
   .pm-card p strong{color:var(--ink)}
-  .pm-visual{background:#fff;border:1px dashed rgba(201,162,39,.7);border-radius:14px;padding:16px;margin:0 0 16px;display:grid;place-items:center;gap:6px}
-  .pm-visual span{font-size:11.5px;color:var(--muted)}
+  .pm-visual{border-radius:14px;overflow:hidden;margin:0 0 16px;background:#fff;border:1px solid var(--line)}
+  .pm-visual img{width:100%;height:auto;display:block}
   .pm-card .btn{width:100%}
   .promo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
   .prize-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 0}
@@ -233,11 +238,15 @@
 </head>
 <body>
 
-<div class="promo-bar">
-  <strong>Gebyar Hadiah Akhir Tahun</strong> — kupon hadiah mesin cuci, kipas, kompor. <a href="#promo">Lihat syaratnya</a>
-</div>
+<div class="sticky-head">
+  <div class="promo-bar">
+    <div class="wrap promo-bar-row">
+      <span><strong>Gebyar Hadiah Akhir Tahun</strong> · <a href="#promo">Lihat syaratnya</a></span>
+      <span class="top-timer"><span class="lbl">Promo berakhir</span> <b id="top-cd">—</b></span>
+    </div>
+  </div>
 
-<header class="topbar">
+  <header class="topbar">
   <div class="wrap row">
     <a class="brand" href="#atas">
       <span class="brand-mark" aria-hidden="true">
@@ -255,6 +264,7 @@
     <button class="btn btn-primary" data-order>Pesan Sekarang</button>
   </div>
 </header>
+</div>
 
 <main id="atas">
   <section class="hero">
@@ -586,14 +596,7 @@
     <h2 id="pm-title">🎁 Gebyar Hadiah Akhir Tahun</h2>
     <p>Follow medsos <strong>@aliyaherba</strong> &amp; <strong>@aliyaherbaofficial</strong>. Dapatkan kupon hadiah mesin cuci, kipas, kompor &amp; magic com!</p>
     <div class="pm-visual">
-      <svg width="86" height="86" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-        <rect x="18" y="42" width="84" height="56" rx="8" fill="#1f6f4a"/>
-        <rect x="14" y="30" width="92" height="20" rx="6" fill="#2a8a5e"/>
-        <rect x="53" y="30" width="14" height="68" fill="#c9a227"/>
-        <path d="M60 30c-6-14-22-16-24-6-2 8 10 10 24 6z" fill="#c9a227"/>
-        <path d="M60 30c6-14 22-16 24-6 2 8-10 10-24 6z" fill="#c9a227"/>
-      </svg>
-      <span>Flyer promo hadiah</span>
+      <img src="img/flyer-gebyar.jpg" alt="Flyer Gebyar Hadiah Akhir Tahun Aliya Herba: mesin cuci, kipas, kompor, magic com" width="1080" height="1080" loading="lazy">
     </div>
     <button class="btn btn-wa" id="pm-cta" data-order data-topic="Kupon Gebyar Hadiah">💬 Chat WhatsApp Sekarang</button>
   </div>
@@ -655,21 +658,28 @@
     function renderCountdown() {
       var wrap = document.getElementById("promo-countdown");
       var diff = new Date(PROMO_END).getTime() - Date.now();
-      var d = document.getElementById("cd-d");
-      var h = document.getElementById("cd-h");
-      var m = document.getElementById("cd-m");
-      var s = document.getElementById("cd-s");
+      var dEl = document.getElementById("cd-d");
+      var hEl = document.getElementById("cd-h");
+      var mEl = document.getElementById("cd-m");
+      var sEl = document.getElementById("cd-s");
+      var top = document.getElementById("top-cd");
       if (diff <= 0) {
         if (wrap) wrap.classList.add("is-ended");
-        [d, h, m, s].forEach(function (el) { if (el) el.textContent = "00"; });
+        [dEl, hEl, mEl, sEl].forEach(function (el) { if (el) el.textContent = "00"; });
         var cap = document.getElementById("cd-caption");
         if (cap) cap.textContent = "Promo telah berakhir";
+        if (top) top.textContent = "berakhir";
         return;
       }
-      if (d) d.textContent = Math.floor(diff / 86400000);
-      if (h) h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
-      if (m) m.textContent = pad(Math.floor((diff % 3600000) / 60000));
-      if (s) s.textContent = pad(Math.floor((diff % 60000) / 1000));
+      var days = Math.floor(diff / 86400000);
+      var hh = pad(Math.floor((diff % 86400000) / 3600000));
+      var mm = pad(Math.floor((diff % 3600000) / 60000));
+      var ss = pad(Math.floor((diff % 60000) / 1000));
+      if (dEl) dEl.textContent = days;
+      if (hEl) hEl.textContent = hh;
+      if (mEl) mEl.textContent = mm;
+      if (sEl) sEl.textContent = ss;
+      if (top) top.textContent = days + "h " + hh + ":" + mm + ":" + ss;
     }
 
     var modal = document.getElementById("promo-modal");
