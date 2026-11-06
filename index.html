@@ -683,18 +683,14 @@
     }
 
     var modal = document.getElementById("promo-modal");
-    var PM_KEY = "aliya_promo_popup_v2";
 
     function closeModal() {
       if (!modal) return;
       modal.classList.remove("is-open");
-      try { sessionStorage.setItem(PM_KEY, "1"); } catch (e) {}
     }
 
     if (modal) {
-      var seen = false;
-      try { seen = sessionStorage.getItem(PM_KEY) === "1"; } catch (e) {}
-      if (!seen) setTimeout(function () { modal.classList.add("is-open"); }, 5000);
+      setTimeout(function () { modal.classList.add("is-open"); }, 5000);
       document.getElementById("pm-close").addEventListener("click", closeModal);
       document.getElementById("pm-cta").addEventListener("click", closeModal);
       modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
